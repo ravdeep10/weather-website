@@ -1,11 +1,11 @@
 const path = require('path')
 const express = require('express');
 const hbs = require('hbs');
-const { error } = require('console');
 const geocode = require('./utils/geocode');
 const forcast = require('./utils/forcast');
-const e = require('express');
 
+
+const port = process.env.PORT || 3000;
 const app = express();
 
 //Express paths for Express config
@@ -88,6 +88,6 @@ app.get('*',(req,res)=>{
         
     })
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log("server running!")
 });
